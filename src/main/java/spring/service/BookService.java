@@ -1,7 +1,7 @@
-package org.example.springBoot.service;
+package spring.service;
 
 import java.util.List;
-import org.example.springBoot.model.Book;
+import spring.model.Book;
 
 public interface BookService {
     Book save(Book book);

@@ -1,7 +1,7 @@
-package org.example.springBoot.repository;
+package spring.repository;
 
 import java.util.List;
-import org.example.springBoot.model.Book;
+import spring.model.Book;
 
 public interface BookRepository {
     Book save(Book book);

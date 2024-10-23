@@ -1,15 +1,15 @@
-package org.example.springBoot.repository.impl;
+package spring.repository.impl;
 
-import java.util.List;
 import jakarta.persistence.criteria.CriteriaQuery;
-import org.example.springBoot.exception.DataProcessingException;
-import org.example.springBoot.model.Book;
-import org.example.springBoot.repository.BookRepository;
+import java.util.List;
+import org.example.spring.exception.DataProcessingException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import spring.model.Book;
+import spring.repository.BookRepository;
 
 @Repository
 public class BookRepositoryImpl implements BookRepository {
@@ -34,7 +34,7 @@ public class BookRepositoryImpl implements BookRepository {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new DataProcessingException("Can't insert a book: " + book + ", Error: " + e.getMessage());
+            throw new DataProcessingException("Can't insert a book: " + book);
         } finally {
             if (session != null) {
                 session.close();

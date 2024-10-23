@@ -1,11 +1,11 @@
-package org.example.springBoot.service.Impl;
+package spring.service.impl;
 
 import java.util.List;
-import org.example.springBoot.model.Book;
-import org.example.springBoot.repository.BookRepository;
-import org.example.springBoot.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import spring.model.Book;
+import spring.repository.BookRepository;
+import spring.service.BookService;
 
 @Service
 public class BookServiceImpl implements BookService {

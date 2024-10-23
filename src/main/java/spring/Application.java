@@ -1,27 +1,26 @@
-package org.example.springBoot;
+package spring;
 
-import org.example.springBoot.model.Book;
-import org.example.springBoot.service.BookService;
+import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.math.BigDecimal;
+import spring.model.Book;
+import spring.service.BookService;
 
 @SpringBootApplication
 public class Application {
-	@Autowired
-	private BookService bookService;
+    @Autowired
+    private BookService bookService;
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-	@Bean
-	public CommandLineRunner commandLineRunner() {
-		return args -> {
+    @Bean
+    public CommandLineRunner commandLineRunner() {
+        return args -> {
             Book book = new Book();
             book.setAuthor("author");
             book.setIsbn("isbn");
@@ -33,5 +32,5 @@ public class Application {
             bookService.save(book);
             System.out.println(bookService.findAll());
         };
-	}
+    }
 }
