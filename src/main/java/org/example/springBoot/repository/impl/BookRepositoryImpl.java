@@ -34,7 +34,7 @@ public class BookRepositoryImpl implements BookRepository {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new DataProcessingException("Can't insert a book: " + book);
+            throw new DataProcessingException("Can't insert a book: " + book + ", Error: " + e.getMessage());
         } finally {
             if (session != null) {
                 session.close();

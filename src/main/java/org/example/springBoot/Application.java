@@ -1,6 +1,5 @@
 package org.example.springBoot;
 
-import org.example.springBoot.config.AppConfig;
 import org.example.springBoot.model.Book;
 import org.example.springBoot.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
